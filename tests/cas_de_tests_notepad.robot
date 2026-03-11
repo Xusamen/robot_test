@@ -8,6 +8,6 @@ Open Notepad, Type Text and Save
      Type Text            Edit    Hello, World!
      Menu Select   File->Save As
      Get Dialog    Save As
-     Type Text    edit1    test.txt
+     Type Text    edit1    TEST_ROBOT.txt
      Click    Save
      Close Application
