@@ -20,7 +20,7 @@ Open Notepad, Type Text, Save and Close
     Get Dialog From Regex    .*Enregistrer sous.*
     
     # Saisie du nom du fichier et validation
-    Type Text    Edit    TEST_ROBOT.txt
+    Type Text    Edit    edition_autom.txt
     Click    Enregistrer
     
     # Petit délai pour laisser le temps au fichier d'être écrit sur le disque du VPS
