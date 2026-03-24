@@ -8,7 +8,7 @@ Open Notepad, Type Text, Save and Close
 
     Type Text    Edit    Hello, World!
 
-    Menu Select    Fichier->&Enregistrer sous
+    Menu Select    Fichier->&Enregistrer sous...
     Get Dialog    Enregistrer sous
     Type Text    edit1    autom_win11.txt
     Click    Enregistrer
