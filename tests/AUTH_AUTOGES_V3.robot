@@ -6,12 +6,13 @@ Library    PywinautoLibrary
 Test Lancement Application Java
     [Teardown]    Terminate All Processes
 
-    Start Process    "C:\Users\recette_windows\Desktop\TEST_RECETTE_AUTOM\start.bat"
+    Start Process    cmd.exe    /c   "C:\Users\recette_windows\Desktop\TEST_RECETTE_AUTOM\start.bat"
     ...    shell=True
 
     # Laisser le temps à la JVM + UI de charger
     Sleep    8s
 
+    Connect To Application    title_re=.*DAFRA AUTO-ECOLE SCHEDULER.*
     # Vérifier que la fenêtre principale est bien apparue
     Get Dialog From Regex    .*DAFRA AUTO-ECOLE SCHEDULER.*
 
