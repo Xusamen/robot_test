@@ -7,26 +7,37 @@ Open Notepad, Type Text, Save and Close
     Launch Application    notepad.exe
     Sleep    2s
 
-    # 2. Connexion à la fenêtre principale via regex
+    # 2. Connexion à la fenêtre principale
     Get Dialog From Regex    .*Sans titre.*
 
     # 3. Saisie du texte
     Type Text    Edit    Hello, World!
 
-    # 4. Ouverture du menu Enregistrer sous
-    Menu Select    Fichier->Enregistrer sous...
-    Sleep    2s
+    # 4. Ouverture du menu Enregistrer sous via raccourci clavier (plus fiable)
+    Send Keys    ^s
+    Sleep    3s
 
     # 5. Connexion à la boîte de dialogue "Enregistrer sous"
-    #    On utilise Get Dialog From Regex au lieu de Wait For Window
-    Get Dialog From Regex    .*Enregistrer sous.*
-
-    # 6. Saisie du nom de fichier dans le champ Edit du dialogue
-    Type Text    Edit1    autom_win10.txt
-
-    # 7. Clic sur le bouton Enregistrer
-    Click    Enregistrer
+    Get Dialog From Regex    .*Enregistrer sous.*|.*Save As.*
     Sleep    1s
 
-    # 8. Fermeture propre
+    # 6. Saisie du nom de fichier et confirmation
+    Type Text    Edit1    autom_win10.txt
+    Click    Enregistrer
+    Sleep    2s
+
+    # 7. RE-CONNEXION à Notepad avec son nouveau titre après enregistrement
+    Get Dialog From Regex    .*autom_win10.*
+
+    # 8. Fermeture propre avec le nouveau titre
     Menu Select    Fichier->Quitter
+```
+
+---
+
+## Explication de la correction clé
+
+Après l'enregistrement, le titre change de `Sans titre - Bloc-notes` vers `autom_win10 - Bloc-notes`. PywinautoLibrary perd la référence à la fenêtre. Il faut **reconnecter explicitement** avec le nouveau titre avant d'exécuter le `Menu Select` de fermeture.
+```
+Avant enregistrement :  "Sans titre - Bloc-notes"
+Après enregistrement :  "autom_win10 - Bloc-notes"  ← nouvelle connexion requise
