@@ -10,7 +10,7 @@ Test Lancement Application Java
     ...    shell=True
 
     # Laisser le temps à la JVM + UI de charger
-    Sleep    8s
+    Sleep    15s
 
     Connect To Application    title_re=.*DAFRA AUTO-ECOLE SCHEDULER.*
     # Vérifier que la fenêtre principale est bien apparue
