@@ -6,24 +6,27 @@ Open Notepad, Type Text, Save and Close
     # 1. Lancement de l'application
     Launch Application    notepad.exe
     Sleep    2s
-    
-    # 2. Utilisation d'une Regex souple pour capturer "Sans titre - Bloc-notes"
-    # Le '.*' avant et après permet de s'affranchir des variations de titre
+
+    # 2. Connexion à la fenêtre principale via regex
     Get Dialog From Regex    .*Sans titre.*
-    
-    # 3. Saisie du texte (Sur Win10, le contrôle s'appelle généralement 'Edit')
+
+    # 3. Saisie du texte
     Type Text    Edit    Hello, World!
 
-    # 4. Enregistrement (Utilisation des raccourcis & pour plus de fiabilité)
-    # &F correspond à l'accélérateur ALT+F pour le menu Fichier
+    # 4. Ouverture du menu Enregistrer sous
     Menu Select    Fichier->Enregistrer sous...
-    
-    # 5. Fenêtre d'enregistrement
-    # On attend que la boîte de dialogue apparaisse (timeout de 5s)
-    Wait For Window    title=Enregistrer sous    timeout=5
+    Sleep    2s
+
+    # 5. Connexion à la boîte de dialogue "Enregistrer sous"
+    #    On utilise Get Dialog From Regex au lieu de Wait For Window
+    Get Dialog From Regex    .*Enregistrer sous.*
+
+    # 6. Saisie du nom de fichier dans le champ Edit du dialogue
     Type Text    Edit1    autom_win10.txt
+
+    # 7. Clic sur le bouton Enregistrer
     Click    Enregistrer
-    
-    # 6. Fermeture propre
     Sleep    1s
+
+    # 8. Fermeture propre
     Menu Select    Fichier->Quitter
