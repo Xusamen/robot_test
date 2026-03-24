@@ -15,8 +15,6 @@ Open Notepad, Type Text, Save and Close
 
     Menu Select    Fichier->&Quitter
 
-    Close Window
-
     # Gérer la boîte de dialogue "Voulez-vous enregistrer" si elle apparaît
     Run Keyword And Ignore Error    Get Dialog From Regex    .*Notepad
     Run Keyword And Ignore Error    Click    &Oui
