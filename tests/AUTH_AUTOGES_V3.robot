@@ -13,6 +13,6 @@ Test Lancement Application Java
     Sleep    8s
 
     # Vérifier que la fenêtre principale est bien apparue
-    Get Dialog From Regex    .*NomDeTaFenetre.*
+    Get Dialog From Regex    .*DAFRA AUTO-ECOLE SCHEDULER.*
 
     Log    Application démarrée avec succès
