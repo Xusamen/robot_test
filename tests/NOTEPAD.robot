@@ -12,9 +12,6 @@ Open Notepad, Type Text, Save and Close
     Get Dialog    Enregistrer sous
     Type Text    edit1    autom_win11.txt
     Click    Enregistrer
-
+    
+    Get Dialog From Regex    autom_win11
     Menu Select    Fichier->&Quitter
-
-    # Gérer la boîte de dialogue "Voulez-vous enregistrer" si elle apparaît
-    Run Keyword And Ignore Error    Get Dialog From Regex    .*Notepad
-    Run Keyword And Ignore Error    Click    &Oui
