@@ -1,6 +1,6 @@
 *** Settings ***
 Library    OperatingSystem
-Library    WinAutoLibrary
+Library    PywinautoLibrary
 Library     Screenshot
 
 *** Test Cases ***
