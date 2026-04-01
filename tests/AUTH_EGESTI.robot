@@ -6,13 +6,25 @@ Suite Setup       Start Sikuli Process
 Suite Teardown    Stop Remote Server
 
 *** Variables ***
-${IMAGE_PATH}      C:\\Users\\DID\\Documents\\OpenTestFactory\\images\\Login\\
+${BASE_IMG}       C:/Users/DID/Documents/OpenTestFactory/images
 ${TIMEOUT}         30
+#${IMG_LOGIN}     ${BASE_IMG}\\Login
+#${IMG_Module_Achats}   ${BASE_IMG}\\Module_Achats
+#${IMG_Module_Ventes}    ${BASE_IMG}\\Module_Ventes
+#${IMG_Module_Comptabilite}    ${BASE_IMG}\\Module_Comptabilite
+#${IMG_Module_Gestion_Adherants}    ${BASE_IMG}\\Module_Gestion_Adherants
+#${IMG_Module_Gestion_Des_Roles}    ${BASE_IMG}\\Module_Gestion_Des_Roles
+#${IMG_Module_Parametrage}    ${BASE_IMG}\\Module_Parametrage
+#${IMG_Module_Personnel}    ${BASE_IMG}\\Module_Personnel
+#${IMG_Module_Stocks}    ${BASE_IMG}\\Module_Stocks
+
+
+
 
 *** Test Cases ***
 AUTH EGESTI
     # Configuration du chemin des images
-    Add Image Path    ${IMAGE_PATH}
+    Add Image Path    ${BASE_IMG}/Login
 
     Start Process    C:\\EXECUTION_EGESTI.bat    shell=True
     
