@@ -6,7 +6,7 @@ Suite Setup       Start Sikuli Process
 Suite Teardown    Stop Remote Server
 
 *** Variables ***
-${IMAGE_PATH}      ${CURDIR}${/}images${/}Login${/}
+${IMAGE_PATH}      C:\\Users\\DID\\Documents\\OpenTestFactory\\images\\Login\\
 ${TIMEOUT}         30
 
 *** Test Cases ***
