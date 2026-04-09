@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          login.resource
+Resource          ../resources/login.resource
 Suite Setup       Start Sikuli Process
 Suite Teardown    Stop Remote Server
 
