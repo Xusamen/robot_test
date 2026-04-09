@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          egesti_resources.resource
+Resource          login.resource
 Suite Setup       Start Sikuli Process
 Suite Teardown    Stop Remote Server
 
