@@ -13,15 +13,15 @@ Démarrer l'application EGESTI
     Add Image Path   ${BASE_IMG}/Login
     Wait Until Screen Contain    button_se_connecter.png    ${TIMEOUT}
 
-Saisir les identifiants "${username}" et "${password}"
-    [Documentation]    Saisie visuelle du login et du mot de passe
-    Wait Until Screen Contain    champ_nom_utilisateur.png    10
-    Input Text    champ_nom_utilisateur.png    ${username}
+#Saisir les identifiants "${username}" et "${password}"
+#    [Documentation]    Saisie visuelle du login et du mot de passe
+#    Wait Until Screen Contain    champ_nom_utilisateur.png    10
+#    Input Text    champ_nom_utilisateur.png    ${username}
     
     # Utilisation de votre astuce pour le mot de passe
-    Click         champ_mot_de_passe.png
-    Input Text    ${EMPTY}    ${password}
+#    Click         champ_mot_de_passe.png
+#    Input Text    ${EMPTY}    ${password}
 
-Valider l'authentification
-    [Documentation]    Clique sur le bouton de connexion
-    Click         button_se_connecter.png
+#Valider l'authentification
+#    [Documentation]    Clique sur le bouton de connexion
+#    Click         button_se_connecter.png
