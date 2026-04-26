@@ -1,14 +1,12 @@
 *** Settings ***
-# On importe le fichier de ressources cree precedemment
 Resource          gherkin.resource
 
-# On prepare et on nettoie l environnement Sikuli ici
 Test Setup        Demarrer l'environnement de test
-Test Teardown     Stop Sikuli Process
+Test Teardown     Stop Remote Server
 
 *** Test Cases ***
 Authentification réussie
-    [Documentation]    AUTH AUTOGES
+    [Documentation]    AUTOGES AUTH
 
     Given je lance l'application AUTOGES
     When je saisis "Dev" sur l'image "champ_poste"
